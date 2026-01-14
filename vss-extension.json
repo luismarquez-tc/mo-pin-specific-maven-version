@@ -1,0 +1,34 @@
+{
+    "manifestVersion": 1,
+    "id": "mo-pin-specific-maven-version",
+    "publisher": "luismarquez",
+    "version": "1.0.0",
+    "name": "Pin Specific Maven Version",
+    "description": "An extension to pin a specific Maven version in Azure Pipelines.",
+    "public": false,
+    "categories": ["Azure Pipelines"],
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "my-required-task",
+            "type": "ms.azure-pipelines.pipeline-decorator",
+            "targets": [
+                "ms.azure-pipelines-agent-job.pre-job-tasks"
+            ],
+            "properties": {
+                "template": "my-decorator.yml"
+            }
+        }
+    ],
+    "files": [
+        {
+            "path": "my-decorator.yml",
+            "addressable": true,
+            "contentType": "text/plain"
+        }
+    ]
+}
